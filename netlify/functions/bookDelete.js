@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
     const client = await clientPromise;
     const id = parseInt(event.path.split("/").reverse()[0]);
 
-    await client.db("bookstore").collection("books").deleteOne({_id:id});
+    await client.db("Books").collection("books").deleteOne({_id:id});
 
     return { statusCode: 200, headers, body: 'OK'};
   } catch (error) {
