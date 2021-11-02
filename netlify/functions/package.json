@@ -1,0 +1,10 @@
+{
+    "name": "fass-example",
+    "dependencies": {
+      "mongodb": "latest",
+     "express": "latest",
+     "serverless-http": "latest",
+     "body-parser": "latest",
+     "lambda-api": "latest"
+    }
+  }
