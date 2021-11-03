@@ -11,11 +11,10 @@ exports.handler = async (event, context) => {
 
   try {
     const client = await clientPromise;
+    const books = await client.db("Books").collection("Books").find({}).toArray();
 
-    const authors = client.db("Books").collection("Books").find({}).toArray((err, result) => {
-      if (err) console.log(err);
-      return { statusCode: 200, headers, body: JSON.stringify(result)};
-    });
+    return { statusCode: 200, headers, body: JSON.stringify(books)};
+
 
    
   } catch (error) {
