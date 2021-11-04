@@ -2,7 +2,7 @@
 
 const { MongoClient } = require('mongodb');
 
-const client = new MongoClient('mongodb+srv://dbUser:dSeSZxw4UtnAG9Z5@cluster0.5z1pk.mongodb.net/Books?retryWrites=true&w=majority',
+const client = new MongoClient(process.env.MONGODB_URI,
   { useNewUrlParser: true,  useUnifiedTopology: true });
   
 module.exports = client.connect();
