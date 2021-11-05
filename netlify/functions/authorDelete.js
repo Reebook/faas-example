@@ -12,10 +12,8 @@ exports.handler = async (event, context) => {
   try {
     const client = await clientPromise;
     const id = parseInt(event.path.split("/").reverse()[0]);
-    const data = JSON.parse(event.body);
-    console.log(event.body)
 
-    await client.db("Books").collection("books").updateOne({_id:String(id)},{$set:data});
+    await client.db("Books").collection("Authors").deleteOne({_id:String(id)});
 
     return { statusCode: 200, headers, body: 'OK'};
   } catch (error) {
